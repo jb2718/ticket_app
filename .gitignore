@@ -19,3 +19,8 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore environment variable files
+.env.development
+.env.test
+.env.production
