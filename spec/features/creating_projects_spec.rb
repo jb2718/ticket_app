@@ -11,5 +11,11 @@ RSpec.feature "users can create new projects" do
     click_button "Create Project"
 
     expect(page).to have_content "Project has been created."
+
+    project = Project.find_by_name("Carnival")
+    expect(page.current_url).to eq project_url(project)
+
+    title = "Carnival - Projects - TicketApp"
+    expect(page).to have_title title
   end
 end
