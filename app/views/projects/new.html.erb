@@ -12,3 +12,18 @@
 
   <%= f.submit %>
 <% end %>
+
+<% if @project.errors.any? %>
+    <div>
+      <h2>
+        <%= pluralize(@project.errors.count, "error") %>
+        prohibited this project from being saved:
+      </h2>
+      <ul>
+        <% @project.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+
+    </div>
+<% end %>
